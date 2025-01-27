@@ -1,0 +1,192 @@
+<html>
+<head>
+  <title>Category - Kurta</title>
+  <link rel="stylesheet" href="mystyle.css"> <!--FILE CSS-->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&display=swap" rel="stylesheet"> <!--Jenis Font-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--Icon-->
+</head>
+
+<body>
+  <section class="navbar-header">
+    <div class="navbar">
+      <div class="fpage">
+        <div class="header">
+          <img src="gambar/logo.png">
+
+          <ul>
+            <li>
+              <a href="home.html">Home</a>
+            </li>
+            <li><a href="#category">Category</a>
+              <ul class="dropdown">
+                <li><a href="#location">Women</a></li>
+                <li><a href="man.html">Men</a></li>
+                <li><a href="girl.html">Girls</a></li>
+                <li><a href="boys.html">Boy</a></li>
+                <li><a href="merchandise.html">Merchandise</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="about.html">About Us</a>
+              <ul class="dropdown">
+                <li><a href="#location">Location</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </li>
+            
+<!-- CART ICON --> 
+           <li>         
+            <a href="purchase.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            </li>            
+
+<!-- PROFILE ICON --> 
+           <li>         
+            <a href="profile.html">
+              <i class="fa-regular fa-user"></i>
+            </a>
+            </li>
+
+         </ul>
+       </div>
+     </div>
+   </div>
+  </section>
+
+<body>
+  <section id="detail_BM">
+        <div class="product-container">
+
+<!-- Left Section -->
+        <div class="left-section">
+            <div class="product-image">
+                <img src="gambar/k-gray.jpg" id="product-image">
+                <div class="zoom-icon" onclick="enlargeImage()">
+                    <i class="fa-solid fa-maximize"></i> <!-- Ikon Zoom -->
+                </div>
+            </div>
+
+            <div class="options">
+                <label for="color"><strong>Choose color:</strong></label>
+                <select id="color" name="color" onchange="updateImage()">
+                    <option value="gray">Gray</option>
+                    <option value="green">Green</option>
+                    <option value="pink">Pink</option>
+                    <option value="saiz">Saizing</option>
+                </select>
+            </div>
+        </div>
+
+<script>
+function updateImage() {
+    const colorSelect = document.getElementById('color');
+    const image = document.querySelector('.product-image img');
+
+    const colorImages = {
+        gray: 'gambar/k-gray.jpg',
+        green: 'gambar/k-green.jpg',
+        pink: 'gambar/k-pink.jpg',
+        saiz: 'gambar/saiz-kurta.jpeg',
+    };
+
+    const selectedColor = colorSelect.value;
+    console.log('Choose color:', selectedColor);
+
+
+// Tukar gambar produk berdasarkan pilihan warna
+    if (colorImages[selectedColor]) {
+        console.log('Gambar baru:', colorImages[selectedColor]);
+        image.src = colorImages[selectedColor];
+    } else {
+        console.error('Warna tidak dijumpai dalam colorImages');
+    }
+}
+</script>
+
+<!-- Fungsi Zoom Gambar -->
+        <div id="image-modal" class="modal" style="display: none;">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modal-image">
+        </div>
+
+<script>
+    function enlargeImage() {
+    const modal = document.getElementById('image-modal'); // Modal untuk zoom
+    const modalImage = document.getElementById('modal-image'); // Gambar dalam modal
+    const productImage = document.getElementById('product-image'); // Gambar utama
+
+    modal.style.display = 'block'; // Tunjukkan modal
+    modalImage.src = productImage.src; // Tetapkan gambar modal berdasarkan gambar utama
+}
+
+function closeModal() {
+    const modal = document.getElementById('image-modal');
+    modal.style.display = 'none'; // Sembunyikan modal
+}
+</script>
+
+
+<!-- Right Section -->
+        <div class="right-section">
+            <div class="product-details">
+                <h2>Baju Kurta</h2><br>
+                <p><strong>Harga:</strong> RM35.00</p><br>
+
+<!-- Button Description -->
+            <button class="description-btn">Description <i class="fa-solid fa-caret-down"></i></button>
+              <br><br>
+
+<!-- Bahagian deskripsi yang akan disembunyikan -->
+            <div class="description-content" style="display: none;">         
+                <ul class="detail-list">
+                  Material - Commo Crepe<br>
+                  <li>• Kurta regular fit lengan panjang</li>
+                  <li>• Potongan cekak musang bersama 4 butang dijahit kemas dan cantik</li>
+                  <li>• Rekaan satu welt pocket yang kemas</li>
+                  <li>• Belahan pendek pada kedua sisi baju</li><br>
+                </ul>
+                <br>
+            </div>
+
+<!-- Menambah fungsi untuk toggle (menunjukkan dan menyembunyikan) deskripsi -->
+<script>
+document.querySelector('.description-btn').addEventListener('click', function () {
+    const descriptionContent = document.querySelector('.description-content');
+    if (descriptionContent.style.display === "none" || descriptionContent.style.display === "") {
+        descriptionContent.style.display = "block";
+    } else {
+        descriptionContent.style.display = "none";
+    }
+});
+;
+</script>
+
+
+            <div class="options">
+                <label for="size"><strong>Choose size:</strong></label>
+                <select id="size" name="size">
+                    <option value="s">S (Small)</option>
+                    <option value="m">M (Medium)</option>
+                    <option value="l">L (Large)</option>
+                    <option value="xl">XL (Extra Large)</option>
+                    <option value="xxl">XXL (Double Extra Large)</option>
+                </select>
+            </div>
+
+          <div class="button_buy">
+            <a href="purchase.html"><button>Buy</button></a>
+          </div>
+          <br>
+          <a href="man.html">Back</a>
+        </div>
+    </div>
+  </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 BUTIK HASNURI. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

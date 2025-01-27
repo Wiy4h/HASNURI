@@ -1,0 +1,294 @@
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="mystyle.css"> <!--FILE CSS-->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&display=swap" rel="stylesheet"> <!--Jenis Font-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--Icon-->
+</head>
+
+<body>
+  <section class="navbar-header">
+    <div class="navbar">
+      <div class="fpage">
+        <div class="header">
+          <img src="gambar/logo.png">
+
+          <ul>
+            <li>
+              <a href="home.html">Home</a>
+            </li>
+            <li><a href="home.html#category">Category</a>
+              <ul class="dropdown">
+                <li><a href="women-collection.html">Women</a></li>
+                <li><a href="man.html">Men</a></li>
+                <li><a href="girl.html">Girls</a></li>
+                <li><a href="boys.html">Boys</a></li>
+                <li><a href="merchandise.html">Merchandise</a></li>
+              </ul>
+            </li>
+
+
+            <li>
+              <a href="about.html">About Us</a>
+              <ul class="dropdown">
+                <li><a href="about.html#team">Developers</a></li>
+                <li><a href="about.html#location">Location</a></li>
+                <li><a href="about.html#contact">Contact</a></li>
+              </ul>
+            </li>
+            
+
+<!-- CART ICON --> 
+           <li>         
+            <a href="purchase.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            </li>            
+
+<!-- PROFILE ICON --> 
+           <li>         
+            <a href="profile.html">
+              <i class="fa-regular fa-user"></i>
+            </a>
+            </li>
+
+         </ul>
+       </div>
+     </div>
+   </div>
+  </section>
+
+    <section class="content1">
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="gambar/home4.jpg">
+          <img src="gambar/home3.jpg">
+          <img src="gambar/home2.jpg">
+          <img src="gambar/home1.jpg">
+        </div>
+        <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+
+<!-- Tambah titik ikut bilangan gambar -->
+      <div class="carousel-indicators">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+        <span class="dot" data-slide="4"></span>
+      </div>
+    </section>
+
+    <script>
+// CAROUSEL
+      const track = document.querySelector('.carousel-track');
+      const images = document.querySelectorAll('.carousel-track img');
+      const prevButton = document.querySelector('.prev');
+      const nextButton = document.querySelector('.next');
+      let currentIndex = 0;
+      const totalImages = images.length;
+
+// Carousel
+      function updateCarousel() {
+        const slideWidth = images[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+// Dot
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+      }
+
+// Untuk bergerak ke gambar seterusnya
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalImages; // Pergi slide seterusnya
+        updateCarousel();
+      }
+
+// Untuk bergerak ke gambar sebelum
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Pergi slide sebelumnya
+        updateCarousel();
+      }
+
+// Autoplay setiap 3 saat
+      setInterval(nextSlide, 3000); // Tukar 3000 untuk masa autoplay (dalam milisaat)
+
+// Untuk butang prev dan next
+      nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalImages; // Pergi slide seterusnya
+        updateCarousel();
+      });
+
+      prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Pusing ke slide sebelumnya
+        updateCarousel();
+      });
+
+
+// Tambah titik ikut bilangan gambar 
+      const dots = document.querySelectorAll('.dot');
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateCarousel();
+
+          dots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+        });
+      });
+
+// Carousel automatik
+      window.addEventListener('load', updateCarousel);
+    </script>
+  </section>
+
+
+<!--CATEGORY-->
+  <section id= "category" class="content2">
+    <div class="cards-container">
+    <h1>CHOOSE YOUR CATEGORY</h1>
+
+    <div class="card">
+      <div class="face front">
+        <img src="gambar/women.png" alt="Women">
+        <h3>Women</h3>
+      </div>
+      <div class="face back">
+        <h3>Chase your dreams in style</h3>
+        <p>Where elegance meets everyday comfort.</p>
+        <a href="women-collection.html" class="see-more-btn">See More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="face front">
+        <img src="gambar/men.png" alt="Men">
+        <h3>Men</h3>
+      </div>
+      <div class="face back">
+        <h3>Elegance in Every Detail</h3>
+        <p>Simplicity is the ultimate sophistication.</p>
+        <a href="man.html" class="see-more-btn">See More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="face front">
+        <img src="gambar/girls.png" alt="Girls">
+        <h3>Girls</h3>
+      </div>
+      <div class="face back">
+        <h3>Adorable Styles, Ultimate Comfort</h3>
+        <p>Lightweight fabrics and cheerful colors perfect for active little ones.</p>
+        <a href="girl.html" class="see-more-btn">See More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="face front">
+        <img src="gambar/boys.png" alt="Boys">
+        <h3>Boys</h3>
+      </div>
+      <div class="face back">
+        <h3>Smart Looks, Tough Comfort</h3>
+        <p>Practical styles with vibrant colors and quality fabrics</p>
+        <a href="boys.html" class="see-more-btn">See More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="face front">
+        <img src="gambar/merchandise.png" alt="Merchandise">
+        <h3>Merchandise</h3>
+      </div>
+      <div class="face back">
+        <h3>Official Hasnuri Exclusives</h3>
+        <p>Premium designs and quality materials for fans and collectors.</p>
+        <a href="merchandise.html" class="see-more-btn">See More</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Elemen jam -->
+  <div id="clock"></div> 
+<script>
+  function updateClock() {
+    const clock = document.getElementById('clock');
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    
+    // Tentukan AM atau PM
+    const amPm = hours >= 12 ? 'PM' : 'AM';
+
+    // Format 12-jam
+    hours = hours % 12 || 12; // Tukar 0 kepada 12 untuk format 12-jam
+
+    // Paparkan jam dengan AM/PM
+    clock.textContent = `${hours}:${minutes} ${amPm}`;
+  }
+
+  // Kemas kini jam setiap 1 saat
+  setInterval(updateClock, 1000);
+
+  // Start jam
+  updateClock();
+</script>
+
+
+<!--FOOTER-->
+  <footer class="footer2">
+  <div class="footer-container">
+    <!-- Footer Logo -->
+    <div class="footer-logo">
+      <img src="gambar/logo.png" alt="Butik Hasnuri Logo">
+    </div>
+
+<!-- Contact Section -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <ul>
+        <li>Email: <a href="mailto:support@hasnuri.com">support@hasnuri.com</a></li>
+        <li>Phone: <a href="tel:+60122169650">+6012-2169650</a></li>
+        <li>Location: No 11, Jalan IHP 1/11, Kawasan Perindustrian Halal Park, Pasir Gudang, Johor</li>
+        <li>Business Hours: Sun-Fri, 8:30AM to 5:30PM</li>
+      </ul>
+    </div>
+
+<!-- About Us Section -->
+    <div class="footer-about">
+      <h3>About Us</h3>
+      <ul>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="about.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+<!-- Quick Links Section -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html#contact">FAQ</a></li>
+        <li><a href="purchase.html">Shipping</a></li>
+      </ul>
+    </div>
+
+<!-- Social Media Section -->
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="https://www.instagram.com/hasnurihq?igsh=NTUxYWthcDc4ZWlj"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="https://www.facebook.com/share/1XQ3dtuMNg/"><i class="fa-brands fa-facebook"></i></a></li>
+        <li><a href="https://x.com/hasnurihq" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+        <li><a href="https://www.tiktok.com/@hasnurihq?_t=ZS-8t0EEuzzQ52&_r=1"><i class="fa-brands fa-tiktok"></i></a></li>
+        <li><a href="https://www.youtube.com/hasnurihq" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+        <li><a href="https://api.whatsapp.com/send/?phone=60139846765&text&type=phone_number&app_absent=0" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
