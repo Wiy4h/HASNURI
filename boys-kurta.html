@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Category - Baju Melayu</title>
+  <title>Boys - Baju Kurta</title>
   <link rel="stylesheet" href="mystyle.css"> <!--FILE CSS-->
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&display=swap" rel="stylesheet"> <!--Jenis Font-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--Icon-->
@@ -63,7 +63,7 @@
         <!-- Left Section -->
         <div class="left-section">
             <div class="product-image">
-                <img src="gambar/bm-biru.jpg" id="product-image">
+                <img src="https://www.hasnuri.com//site_media/img/OFF_WHITE_KIDS_20240128113434.jpg" id="product-image">
                 <div class="zoom-icon" onclick="enlargeImage()">
                     <i class="fa-solid fa-maximize"></i> <!-- Ikon Zoom -->
                 </div>
@@ -72,9 +72,9 @@
             <div class="options">
                 <label for="color"><strong>Choose color:</strong></label>
                 <select id="color" name="color" onchange="updateImage()">
-                    <option value="blue">Blue</option>
-                    <option value="green">Green</option>
-                    <option value="orange">Orange</option>
+                    <option value="white">White</option>
+                    <option value="purple">Purple</option>
+                    <option value="yellow">Yellow</option>
                     <option value="saiz">Saizing</option>
                 </select>
             </div>
@@ -86,10 +86,10 @@ function updateImage() {
     const image = document.querySelector('.product-image img');
 
     const colorImages = {
-        blue: 'gambar/bm-biru.jpg',
-        green: 'gambar/bm-hijau.jpg',
-        orange: 'gambar/bm-orange.jpg',
-        saiz: 'gambar/saiz-bm.jpeg',
+        white: 'https://www.hasnuri.com//site_media/img/OFF_WHITE_KIDS_20240128113434.jpg',
+        purple: 'https://www.hasnuri.com//site_media/img/GAMBAR_WEB___SHOPIFY_KURTA_ZAIN_KIDS__LILAC_PURPLE__20240126093948.jpg',
+        black: 'https://www.hasnuri.com//site_media/img/BLACK_KIDS_20240128121334.jpg',
+        saiz: 'https://www.hasnuri.com/scripts/timthumb.php?src=https://www.hasnuri.com//site_media/img/MEASUREMENT_CHART_KURTA_ZAYN_KIDS_20240221123506.jpg&w=1080&zc=1',
     };
 
     const selectedColor = colorSelect.value;
@@ -134,7 +134,7 @@ function closeModal() {
         <div class="right-section">
             <div class="product-details">
                 <h2>Baju Melayu</h2><br>
-                <p><strong>Harga:</strong> RM50.00</p><br>
+                <p><strong>Harga:</strong> RM49.00</p><br>
 
 <!-- Button Description -->
             <button class="description-btn">Description <i class="fa-solid fa-caret-down"></i></button>
@@ -142,18 +142,14 @@ function closeModal() {
                            
 <!-- Bahagian deskripsi yang akan disembunyikan -->
             <div class="description-content" style="display: none;">
-              Material - High Quality Heavy Como Crepe<br>
+              Material - High Quality Linen Cotton<br>
               
                 Baju<br>
                 <ul class="detail-list">
                   <li>• Baju Melayu regular fit</li><br>
-                  <li>• Rekaan leher teluk belanga berserta 1 butang</li><br>
+                  <li>• Rekaan leher cekak musang berserta 1 butang</li><br>
+                  <li>• Rekaan satu pocket dihadapan</li><br>
                   <li>• Belahan pendek pada kedua sisi baju</li>
-              
-                  <br><br>Seluar<br>
-                    <li>• Seluar potongan lurus</li>
-                    <li>• Poket kiri dan kanan seluar</li>
-                    <li>• Pinggang half getah berzip</li><br><br>
                 </ul>
             </div>
 
@@ -185,7 +181,7 @@ document.querySelector('.description-btn').addEventListener('click', function ()
             <a href="purchase.html"><button>Buy</button></a>
           </div>
           <br>
-          <a href="man.html">Back</a>
+          <a href="boys.html">Back</a>
         </div>
     </div>
   </section>

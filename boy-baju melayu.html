@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Category - Baju Melayu</title>
+  <title>Boys - Baju Melayu</title>
   <link rel="stylesheet" href="mystyle.css"> <!--FILE CSS-->
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&display=swap" rel="stylesheet"> <!--Jenis Font-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--Icon-->
@@ -33,7 +33,6 @@
                 <li><a href="about.html#team">Developers</a></li>
                 <li><a href="about.html#location">Location</a></li>
                 <li><a href="about.html#contact">Contact</a></li>
-              </ul>
             </li>
             
 <!-- CART ICON --> 
@@ -63,7 +62,7 @@
         <!-- Left Section -->
         <div class="left-section">
             <div class="product-image">
-                <img src="gambar/bm-biru.jpg" id="product-image">
+                <img src="https://www.hasnuri.com//site_media/img/GAMBAR_SHOPIFY_BAJU_MELAYU_FATTAH_KIDS__LIGHT_COCO__20231214073821.jpg" id="product-image">
                 <div class="zoom-icon" onclick="enlargeImage()">
                     <i class="fa-solid fa-maximize"></i> <!-- Ikon Zoom -->
                 </div>
@@ -72,9 +71,9 @@
             <div class="options">
                 <label for="color"><strong>Choose color:</strong></label>
                 <select id="color" name="color" onchange="updateImage()">
+                    <option value="brown">Brown</option>
                     <option value="blue">Blue</option>
-                    <option value="green">Green</option>
-                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
                     <option value="saiz">Saizing</option>
                 </select>
             </div>
@@ -86,10 +85,10 @@ function updateImage() {
     const image = document.querySelector('.product-image img');
 
     const colorImages = {
-        blue: 'gambar/bm-biru.jpg',
-        green: 'gambar/bm-hijau.jpg',
-        orange: 'gambar/bm-orange.jpg',
-        saiz: 'gambar/saiz-bm.jpeg',
+        brown: 'https://www.hasnuri.com//site_media/img/GAMBAR_SHOPIFY_BAJU_MELAYU_FATTAH_KIDS__LIGHT_COCO__20231214073821.jpg',
+        blue: 'https://www.hasnuri.com//site_media/img/GAMBAR_SHOPIFY_BAJU_MELAYU_FATTAH_KIDS__TEAL__20231214073236.jpg',
+        yellow: 'https://www.hasnuri.com//site_media/img/GAMBAR_SHOPIFY_BAJU_MELAYU_FATTAH_KIDS__MOSS_YELLOW__20231214064240.jpg',
+        saiz: 'https://www.hasnuri.com/scripts/timthumb.php?src=https://www.hasnuri.com//site_media/img/photo_2023-12-14_05_00_29_20231214073550.jpeg&w=1080&zc=1',
     };
 
     const selectedColor = colorSelect.value;
@@ -147,13 +146,14 @@ function closeModal() {
                 Baju<br>
                 <ul class="detail-list">
                   <li>• Baju Melayu regular fit</li><br>
-                  <li>• Rekaan leher teluk belanga berserta 1 butang</li><br>
+                  <li>• Rekaan leher cekak musang berserta 5 butang</li><br>
+                  <li>• Rekaan satu welt pocket</li><br>
                   <li>• Belahan pendek pada kedua sisi baju</li>
               
                   <br><br>Seluar<br>
                     <li>• Seluar potongan lurus</li>
-                    <li>• Poket kiri dan kanan seluar</li>
-                    <li>• Pinggang half getah berzip</li><br><br>
+                    <li>• Pinggang full getah</li>
+                    <li>• Tiada poket</li><br><br>
                 </ul>
             </div>
 
@@ -185,7 +185,7 @@ document.querySelector('.description-btn').addEventListener('click', function ()
             <a href="purchase.html"><button>Buy</button></a>
           </div>
           <br>
-          <a href="man.html">Back</a>
+          <a href="boys.html">Back</a>
         </div>
     </div>
   </section>
